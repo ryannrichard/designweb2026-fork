@@ -1,33 +1,32 @@
-# Repositório da turma de Design Web 2026
+## Tarefa 10 – Seção de eventos
+
+**Objetivo:** A partir do código HTML limpo (sem classes), você deve adicionar classes Tailwind para estilizar a seção "Eventos" do site do IFRN, reproduzindo o layout da imagem de referência.
 
 
-## 4ª Semana
+### regras
 
-### Passo 1 – Criar a branch da atividade
-Crie uma branch da atividade. 
-```
-git checkout -b atividade-1
-```
-### Passo 2 – Editar o arquivo index.html
-Substitua o conteúdo do <body> pelo código abaixo (ou personalize):
+- Use apenas classes utilitárias do Tailwind – sem CSS customizado.
+- Não modifique a estrutura HTML (tags, conteúdo, atributos href, src, etc.).
+- Consulte o Cheatsheet para encontrar as classes adequadas.
 
-```
-<div class="max-w-sm bg-white rounded-lg shadow-lg p-6 text-center">
-  <img src="https://picsum.photos/seed/1/100" alt="Foto de perfil" class="w-24 h-24 rounded-full mx-auto mb-4">
-  <h2 class="text-2xl font-bold text-gray-800">Seu Nome</h2>
-  <p class="text-gray-600 mt-2">Desenvolvedor Web em aprendizado</p>
-  <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-    Seguir
-  </button>
-</div>
-```
 
-## Passo 3 – Commit e push
-```
-git add index.html
-git commit -m "adiciona card de perfil estilizado com Tailwind"
-git push origin atividade-1
-```
+---
+
+## Passo a passo para execução
+
+1. **Atualize seu fork** do repositório da turma.
+2. **Crie uma nova branch** para esta tarefa:  
+   ```bash
+   git checkout -b features/atividade-10-evento
+   ```
+3. **Insira classes Tailwind** em cada elemento para reconstruir o layout, visualizando como está o site do IFRN e criar a estrutura adequada com as classes mais proeminentes.
+   
+4. **Commit e push**:
+   ```bash
+   git add .
+   git commit -m "Atividade 10 - Seção de eventos"
+   git push origin atividade-9-footer
+   ```
 
 ### Passo 4 – Enviar o link no Google Sala de Aula
 - No GitHub, vá até seu repositório fork.
@@ -98,4 +97,3 @@ projeto/
 - Atributos de acessibilidade (`role`, `aria-label`, `focus-visible`)
 - Responsividade com mixins (mobile-first)
 - Código SCSS organizado com variáveis e aninhamento
->>>>>>> upstream/main
