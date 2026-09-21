@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Repositório da turma de Design Web 2026
 
 
