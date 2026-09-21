@@ -3,25 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Prática Tailwind - Dia 2 [Atividade 5]</title>
-
+    <title>Notícias IFRN</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body>
+  
+    <section class="max-w-7xl mx-auto px-4 py-10">
+        <h1 class="text-3xl font-bold text-green-800 mb-8">Notícias</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
+                <img src="assets/img/premio.jpg" alt="Jogos Intercampi" class="w-full h-48 object-cover">
 
-    <div class="max-w-sm mx-auto mt-10 bg-white rounded-2xl shadow-md overflow-hidden border border-green-200">
-      <img src="assets/img/premio.jpg" alt="imagem do premio"class="w-sm h-48 object-cover object-center">
+                <div class="p-5 flex flex-col flex-1 space-y-2">
+                    <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-green-100 text-green-800">Intercampi</span>
 
-    <div class="p-6 space-y-3">
-      <h2 class="text-2xl font-bold text-green-800"> Prêmio IEL 2026 </h2>
-      <p class="text-gray-700 text-base">O Prêmio IEL 2026 reconhece projetos e iniciativas de destaque, valorizando a inovação e a excelência. </p>
-      <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full"> Premiação </span>
-      <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full"> IEL 2026 </span>
+                    <h2 class="text-xl font-bold text-green-800">Intercampi inicia fase final estadual em Natal</h2>
 
-    </div>
-    </div>
+                    <p class="text-gray-700 text-sm flex-1">Cerca de 1.200 participantes disputam onze modalidades até sábado (29).</p>
 
+                    <p class="text-gray-500 text-xs mt-2">Há 46 minutos</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
+                <img src="assets/img/Premio_IEL_2026.2e16d0ba.fill-540x540.jpg" alt="Prêmio IEL 2026" class="w-full h-48 object-cover">
+                <div class="p-5 flex flex-col flex-1 space-y-2">
+                    <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-blue-100 text-blue-800">Prêmio IEL 2026</span>
+
+                    <h2 class="text-xl font-bold text-green-800">IFRN tem projetos entre os vencedores do Prêmio IEL 2026</h2>
+
+                    <p class="text-gray-700 text-sm flex-1">Instituto conquistou o 1º lugar em Educação Inovadora - Nível Técnico e o 2º lugar em Educação Inovadora - Nível Superior.</p>
+                    
+                    <p class="text-gray-500 text-xs mt-2">Há 21 horas, 56 minutos</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
+                <img src="assets/img/Edital_46-2026-Propi_Capa-Materia.2e16d0ba.fill-540x540.png" alt="Pesquisa" class="w-full h-48 object-cover">
+                <div class="p-5 flex flex-col flex-1 space-y-2">
+                    <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-yellow-100 text-yellow-800">Pesquisa</span>
+
+                    <h2 class="text-xl font-bold text-green-800">Inscrições para bolsas de mestrado e doutorado seguem até 24 de agosto</h2>
+
+                    <p class="text-gray-700 text-sm flex-1">Edital tem três bolsas de mestrado e uma de doutorado para estudantes de pós-graduação.</p>
+
+                    <p class="text-gray-500 text-xs mt-2">Há 3 dias, 23 horas</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
