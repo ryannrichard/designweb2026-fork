@@ -1,91 +1,122 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-BR" data-theme="emerald">
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{seu nome aqui} - UX e Dev Front-end</title>
-    <!-- CSS compilado do SCSS | colocar o link correto, pois este vai dar erro, viu-->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Usando a fonte de icones aqui-->
-    <link rel="stylesheet" href="assets/css/style.css">
-=======
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 1 – Tailwind</title>
-    <!-- Tailwind CSS v4 (browser) -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@latest/src/css/phosphor.css" />
->>>>>>> upstream/main
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio d o DaisyUI</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-base-200 text-base-content min-h-screen flex flex-col justify-between">
 
-<body class="bg-gray-100 min-h-screen">
+  <header>
+    <div class="navbar bg-base-100 shadow-md px-4 md:px-8">
+      <div class="flex-1">
+        <a class="btn btn-ghost text-xl font-bold">Desenvolvedor Web</a>
+      </div>
+      <div class="flex-none gap-2">
+        <a href="#sobre" class="btn btn-sm btn-ghost">Sobre</a>
+        <a href="#projetos" class="btn btn-sm btn-ghost">Projetos</a>
+        <a href="#contato" class="btn btn-sm btn-primary">Contato</a>
+      </div>
+    </div>
 
-    <header>
-        <div>
-            <!-- LOGO + SLOGAN -->
-            <div>
-                <h1>
-                    <a href="/"
-                        title="Instituto Federal de Educação, Ciência e Tecnologia do Estado do Rio Grande do Norte">
-                        INSTITUTO FEDERAL
-                    </a>
-                </h1>
-                <p>
-                    Educação, Ciência, Cultura e Tecnologia em todo o Rio Grande do Norte
-                </p>
-            </div>
-
-            <!-- MENU HAMBÚRGUER (mobile) -->
-            <button id="menuToggle" aria-label="Menu">
-                <i class="ph ph-list"></i>
-            </button>
-
-            <!-- NAVEGAÇÃO PRINCIPAL (desktop) -->
-            <nav aria-label="Navegação principal">
-                <a href="#">Processos seletivos</a>
-                <a href="#">Cursos</a>
-                <a href="#">Campi</a>
-                <a href="#">Institucional</a>
-                <a href="#">Acesso à Informação</a>
-                <a href="#">Eventos</a>
-                <a href="#">Serviços</a>
-            </nav>
-
-            <!-- AÇÕES (ícones, busca, contraste, modo escuro) -->
-            <div>
-                <!-- Ícones sociais -->
-                <div>
-                    <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
-                    <a href="#" aria-label="Spotify"><i class="ph ph-spotify-logo"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
-                </div>
-
-                <!-- Busca -->
-                <form method="get" action="/search/">
-                    <input type="search" name="query" placeholder="Busca" aria-label="Busca" />
-                    <button type="submit" aria-label="Pesquisar">
-                        <i class="ph ph-magnifying-glass"></i>
-                    </button>
-                </form>
-
-                <!-- Alto contraste -->
-                <button id="altocontraste" type="button" aria-label="Alto contraste">
-                    <i class="ph ph-contrast"></i>
-                </button>
-
-                <!-- Modo escuro -->
-                <button type="button" aria-label="Modo escuro">
-                    <i class="ph ph-moon"></i>
-                </button>
-            </div>
+    <div class="hero bg-base-100 py-12 border-b border-base-300">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-4xl font-bold">Ryann</h1>
+          <p class="py-6">Desenvolvedor Front-end em formação, atualmente começando com o Tailwind CSS e DaisyUI.</p>
+          <div class="flex justify-center gap-4">
+            <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+            <a href="#contato" class="btn btn-outline">Fale Comigo</a>
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-8 flex-grow space-y-16">
+
+    <section id="sobre" class="bg-base-100 p-6 rounded-box shadow-sm">
+      <h2 class="text-2xl font-bold mb-4">Sobre Mim</h2>
+      <p class="mb-4">Atualmente estudo no IFRN e venho aprimorando minhas habilidades em Front-end com os conhecimentos que estou adquirindo com o curso.</p>
+      
+      <div class="flex flex-wrap gap-2 items-center">
+        <span class="font-semibold mr-2">Habilidades:</span>
+        <div class="badge badge-primary">HTML & CSS</div>
+        <div class="badge badge-secondary">Tailwind CSS</div>
+        <div class="badge badge-accent">DaisyUI</div>
+        <div class="badge badge-outline">Git & GitHub</div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h2 class="text-2xl font-bold mb-6 text-center">Projetos de Destaque</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="card bg-base-100 shadow-xl border border-base-200">
+          <div class="card-body">
+            <h3 class="card-title">Portal de Notícias</h3>
+            <p>Página de notícias responsiva desenvolvida com layout em grid e estilização customizada.</p>
+            <div class="card-actions justify-end mt-4">
+              <button class="btn btn-primary btn-sm">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl border border-base-200">
+          <div class="card-body">
+            <h3 class="card-title">Sistema de Eventos</h3>
+            <p>Seção para exibição e gerenciamento visual de eventos acadêmicos e minicursos.</p>
+            <div class="card-actions justify-end mt-4">
+              <button class="btn btn-primary btn-sm">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl border border-base-200">
+          <div class="card-body">
+            <h3 class="card-title">Componentes DaisyUI</h3>
+            <p>Aplicação prática consolidando o uso de temas, botões e elementos de formulário.</p>
+            <div class="card-actions justify-end mt-4">
+              <button class="btn btn-primary btn-sm">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="bg-base-100 p-6 rounded-box shadow-sm max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold mb-6 text-center">Entre em Contato</h2>
+
+      <div class="alert alert-info mb-6 shadow-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span>Disponível para oportunidades de estágio e projetos freelance!</span>
+      </div>
+
+      <form class="space-y-4" onsubmit="event.preventDefault();">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Seu Nome</span>
+          </label>
+          <input type="text" placeholder="Digite seu nome completo" class="input input-bordered w-full" required />
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Seu E-mail</span>
+          </label>
+          <input type="email" placeholder="seuemail@exemplo.com" class="input input-bordered w-full" required />
+        </div>
+
+        <div class="form-control mt-6">
+          <button class="btn btn-primary w-full">Enviar Mensagem</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
 
 </body>
-
 </html>
