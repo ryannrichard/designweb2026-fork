@@ -1,54 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notícias IFRN</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Header Responsivo IFRN - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  
-    <section class="max-w-7xl mx-auto px-4 py-10">
-        <h1 class="text-3xl font-bold text-green-800 mb-8">Notícias</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
-                <img src="assets/img/premio.jpg" alt="Jogos Intercampi" class="w-full h-48 object-cover">
+<body class="bg-gray-100 font-sans antialiased">
 
-                <div class="p-5 flex flex-col flex-1 space-y-2">
-                    <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-green-100 text-green-800">Intercampi</span>
+  <header class="w-full bg-[#398b58] text-white">
+    <div class="max-w-[1400px] mx-auto px-4 py-3">
+      
+      <div class="flex flex-wrap items-center justify-between gap-y-3 gap-x-6">
+        
+        <div class="flex items-center space-x-4">
+          <a href="#" class="flex items-center space-x-3 group">
+            <svg class="h-10 w-auto shrink-0" viewBox="0 0 100 120">
+              <rect x="0" y="0" width="28" height="28" rx="2" fill="#d9232a" />
+              <rect x="36" y="0" width="28" height="28" rx="2" fill="#ffffff" />
+              <rect x="72" y="0" width="28" height="28" rx="2" fill="#ffffff" />
+              <rect x="0" y="36" width="28" height="28" rx="2" fill="#ffffff" />
+              <rect x="36" y="36" width="28" height="28" rx="2" fill="#ffffff" />
+              <rect x="0" y="72" width="28" height="28" rx="2" fill="#ffffff" />
+              <rect x="36" y="72" width="28" height="28" rx="2" fill="#ffffff" />
+              <rect x="0" y="108" width="28" height="12" rx="2" fill="#ffffff" />
+            </svg>
 
-                    <h2 class="text-xl font-bold text-green-800">Intercampi inicia fase final estadual em Natal</h2>
-
-                    <p class="text-gray-700 text-sm flex-1">Cerca de 1.200 participantes disputam onze modalidades até sábado (29).</p>
-
-                    <p class="text-gray-500 text-xs mt-2">Há 46 minutos</p>
-                </div>
+            <div class="flex flex-col text-white tracking-tight shrink-0">
+              <strong class="text-sm sm:text-base font-black uppercase leading-none">Instituto Federal</strong>
+              <span class="text-[10px] sm:text-[11px] font-normal leading-snug opacity-90">Rio Grande do Norte</span>
             </div>
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
-                <img src="assets/img/Premio_IEL_2026.2e16d0ba.fill-540x540.jpg" alt="Prêmio IEL 2026" class="w-full h-48 object-cover">
-                <div class="p-5 flex flex-col flex-1 space-y-2">
-                    <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-blue-100 text-blue-800">Prêmio IEL 2026</span>
+          </a>
 
-                    <h2 class="text-xl font-bold text-green-800">IFRN tem projetos entre os vencedores do Prêmio IEL 2026</h2>
-
-                    <p class="text-gray-700 text-sm flex-1">Instituto conquistou o 1º lugar em Educação Inovadora - Nível Técnico e o 2º lugar em Educação Inovadora - Nível Superior.</p>
-                    
-                    <p class="text-gray-500 text-xs mt-2">Há 21 horas, 56 minutos</p>
-                </div>
-            </div>
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
-                <img src="assets/img/Edital_46-2026-Propi_Capa-Materia.2e16d0ba.fill-540x540.png" alt="Pesquisa" class="w-full h-48 object-cover">
-                <div class="p-5 flex flex-col flex-1 space-y-2">
-                    <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-yellow-100 text-yellow-800">Pesquisa</span>
-
-                    <h2 class="text-xl font-bold text-green-800">Inscrições para bolsas de mestrado e doutorado seguem até 24 de agosto</h2>
-
-                    <p class="text-gray-700 text-sm flex-1">Edital tem três bolsas de mestrado e uma de doutorado para estudantes de pós-graduação.</p>
-
-                    <p class="text-gray-500 text-xs mt-2">Há 3 dias, 23 horas</p>
-                </div>
-            </div>
+          <p class="hidden xl:block text-[11px] text-white/90 leading-tight max-w-[210px] pl-4 border-l border-white/30">
+            Educação, Ciência, Cultura e Tecnologia em todo o Rio Grande do Norte
+          </p>
         </div>
-    </section>
+
+        <div class="flex items-center space-x-3">
+
+          <nav aria-label="Redes Sociais" class="flex items-center space-x-1.5">
+            <a href="#" class="p-1.5 rounded-full border border-white hover:bg-white/20 transition" title="Instagram">
+              <svg class="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="#" class="p-1.5 rounded-full border border-white hover:bg-white/20 transition" title="X (Twitter)">
+              <svg class="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" class="p-1.5 rounded-full border border-white hover:bg-white/20 transition" title="LinkedIn">
+              <svg class="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <a href="#" class="p-1.5 rounded-full border border-white hover:bg-white/20 transition" title="YouTube">
+              <svg class="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+              </svg>
+            </a>
+            <a href="#" class="p-1.5 rounded-full border border-white hover:bg-white/20 transition" title="Spotify">
+              <svg class="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141 C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.18-.1.2-1.02-.36-.18-.6.36-1.021 1.02-1.2 4.2-1.261 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+              </svg>
+            </a>
+            <a href="#" class="p-1.5 rounded-full border border-white hover:bg-white/20 transition" title="TikTok">
+              <svg class="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.56-1.36 1.52-1.38 2.52-.01.76.31 1.51.84 2.05.65.66 1.61.98 2.53.86 1.1-.11 2.08-.82 2.47-1.85.29-.75.33-1.58.32-2.38.01-4.98.01-9.96.01-14.94z"/>
+              </svg>
+            </a>
+          </nav>
+
+          <span class="w-px h-5 bg-white/40 block"></span>
+
+          <div class="flex items-center space-x-1.5">
+            <button type="button" class="p-1.5 rounded-full border border-white hover:bg-white/20 transition" title="Alto Contraste">
+              <svg class="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18v-16c4.41 0 8 3.59 8 8s-3.59 8-8 8z"/>
+              </svg>
+            </button>
+            <button type="button" class="p-1.5 rounded-full border border-white hover:bg-white/20 transition" title="Modo Escuro">
+              <svg class="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                <path d="M12.3 2a10 10 0 0 0-1.9 20 10 10 0 0 0 8.7-15 1 1 0 0 0-1-1.2 8 8 0 1 1-5.8-3.8 1 1 0 0 0 0-2z"/>
+              </svg>
+            </button>
+          </div>
+
+          <form role="search" class="flex items-center bg-white rounded-full px-3 py-1 shadow-inner">
+            <svg class="w-3.5 h-3.5 text-gray-400 fill-current mr-2 shrink-0" viewBox="0 0 24 24">
+              <path d="M10 2a8 8 0 016.32 12.906l4.387 4.387a1 1 0 01-1.414 1.414l-4.387-4.387A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/>
+            </svg>
+            <input
+              type="search"
+              placeholder="Busca"
+              class="w-24 sm:w-36 bg-transparent text-gray-800 text-xs font-medium focus:outline-none"
+            />
+          </form>
+
+        </div>
+
+      </div>
+
+      <div class="border-b border-white/30 my-3"></div>
+      
+      <nav aria-label="Navegação Principal" class="pb-1">
+        <ul class="flex flex-wrap items-center justify-start gap-x-6 gap-y-2 text-xs font-bold tracking-wide">
+          <li><a href="#" class="hover:text-white/80 transition-opacity">Processos seletivos</a></li>
+          <li><a href="#" class="hover:text-white/80 transition-opacity">Cursos</a></li>
+          <li><a href="#" class="hover:text-white/80 transition-opacity">Campi</a></li>
+          <li><a href="#" class="hover:text-white/80 transition-opacity">Institucional</a></li>
+          <li><a href="#" class="hover:text-white/80 transition-opacity">Acesso à Informação</a></li>
+          <li><a href="#" class="hover:text-white/80 transition-opacity">Eventos</a></li>
+          <li><a href="#" class="hover:text-white/80 transition-opacity">Serviços</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
 </body>
 </html>
