@@ -1,91 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{seu nome aqui} - UX e Dev Front-end</title>
-    <!-- CSS compilado do SCSS | colocar o link correto, pois este vai dar erro, viu-->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Usando a fonte de icones aqui-->
-    <link rel="stylesheet" href="assets/css/style.css">
-=======
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 1 – Tailwind</title>
-    <!-- Tailwind CSS v4 (browser) -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@latest/src/css/phosphor.css" />
->>>>>>> upstream/main
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Vue — Aula 01</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+<body class="min-h-screen bg-base-200 flex items-center justify-center p-6">
 
-<body class="bg-gray-100 min-h-screen">
+  
+  <div id="app" class="card bg-base-100 shadow-2xl w-full max-w-md">
+    <div class="card-body">
 
-    <header>
-        <div>
-            <!-- LOGO + SLOGAN -->
-            <div>
-                <h1>
-                    <a href="/"
-                        title="Instituto Federal de Educação, Ciência e Tecnologia do Estado do Rio Grande do Norte">
-                        INSTITUTO FEDERAL
-                    </a>
-                </h1>
-                <p>
-                    Educação, Ciência, Cultura e Tecnologia em todo o Rio Grande do Norte
-                </p>
-            </div>
+      <h1 class="card-title justify-center text-2xl mb-2">Calculadora Vue</h1>
 
-            <!-- MENU HAMBÚRGUER (mobile) -->
-            <button id="menuToggle" aria-label="Menu">
-                <i class="ph ph-list"></i>
-            </button>
+      <!-- VISOR — {{ display }} mostra o estado reativo -->
+      <div class="bg-base-300 rounded-box p-4 mb-4 min-h-16 flex items-center justify-end">
+        <div class="text-3xl font-mono font-bold break-all">{{ display }}</div>
+      </div>
 
-            <!-- NAVEGAÇÃO PRINCIPAL (desktop) -->
-            <nav aria-label="Navegação principal">
-                <a href="#">Processos seletivos</a>
-                <a href="#">Cursos</a>
-                <a href="#">Campi</a>
-                <a href="#">Institucional</a>
-                <a href="#">Acesso à Informação</a>
-                <a href="#">Eventos</a>
-                <a href="#">Serviços</a>
-            </nav>
+      <!-- BOTÕES — cada um dispara um método via @click -->
+      <div class="grid grid-cols-4 gap-2">
 
-            <!-- AÇÕES (ícones, busca, contraste, modo escuro) -->
-            <div>
-                <!-- Ícones sociais -->
-                <div>
-                    <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
-                    <a href="#" aria-label="Spotify"><i class="ph ph-spotify-logo"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
-                </div>
+        <button class="btn btn-ghost text-xl" @click="appendDigit('7')">7</button>
+        <button class="btn btn-ghost text-xl" @click="appendDigit('8')">8</button>
+        <button class="btn btn-ghost text-xl" @click="appendDigit('9')">9</button>
+        <button class="btn btn-primary text-xl" @click="setOperator('/')">÷</button>
 
-                <!-- Busca -->
-                <form method="get" action="/search/">
-                    <input type="search" name="query" placeholder="Busca" aria-label="Busca" />
-                    <button type="submit" aria-label="Pesquisar">
-                        <i class="ph ph-magnifying-glass"></i>
-                    </button>
-                </form>
+        <button class="btn btn-ghost text-xl" @click="appendDigit('4')">4</button>
+        <button class="btn btn-ghost text-xl" @click="appendDigit('5')">5</button>
+        <button class="btn btn-ghost text-xl" @click="appendDigit('6')">6</button>
+        <button class="btn btn-primary text-xl" @click="setOperator('*')">×</button>
 
-                <!-- Alto contraste -->
-                <button id="altocontraste" type="button" aria-label="Alto contraste">
-                    <i class="ph ph-contrast"></i>
-                </button>
+        <button class="btn btn-ghost text-xl" @click="appendDigit('1')">1</button>
+        <button class="btn btn-ghost text-xl" @click="appendDigit('2')">2</button>
+        <button class="btn btn-ghost text-xl" @click="appendDigit('3')">3</button>
+        <button class="btn btn-primary text-xl" @click="setOperator('-')">−</button>
 
-                <!-- Modo escuro -->
-                <button type="button" aria-label="Modo escuro">
-                    <i class="ph ph-moon"></i>
-                </button>
-            </div>
-        </div>
-    </header>
+        <button class="btn btn-error text-xl" @click="clear">C</button>
+        <button class="btn btn-ghost text-xl" @click="appendDigit('0')">0</button>
+        <button class="btn btn-accent text-xl" @click="calculate">=</button>
+        <button class="btn btn-primary text-xl" @click="setOperator('+')">+</button>
 
+      </div>
+    </div>
+  </div>
+
+  <script>
+    Vue.createApp({
+
+      data() {
+        return {
+          display: '0',            // aparece no visor
+          firstOperand: null,      // primeiro número da operação
+          operator: null,          // '+', '-', '*' ou '/'
+          waitingForSecond: false  // true = o próximo dígito substitui o visor
+        }
+      },
+
+      // ==========================================
+      // as ações da calculadora
+      // ==========================================
+      methods: {
+
+        // EXEMPLO JÁ PRONTO — use como referência
+        // Reseta a calculadora ao estado inicial.
+        clear() {
+          this.display = '0';
+          this.firstOperand = null;
+          this.operator = null;
+          this.waitingForSecond = false;
+        },
+
+        // ==========================================
+        // TODO 1 — appendDigit(digit)
+        // Digita um dígito no visor.
+        //
+        // Regras:
+        //  1. Se this.waitingForSecond for true:
+        //        this.display = digit
+        //        this.waitingForSecond = false
+        //  2. Senão, se this.display === '0':
+        //        this.display = digit
+        //  3. Senão:
+        //        this.display = this.display + digit
+        // ==========================================
+        appendDigit(digit) {
+          // ... seu código aqui
+        },
+
+        // ==========================================
+        // TODO 2 — setOperator(op)
+        // Registra o operador pendente.
+        //
+        // Regras:
+        //  1. Se this.display === 'Erro': return (saia)
+        //  2. Se this.operator !== null E !this.waitingForSecond:
+        //        this.calculate()
+        //  3. this.firstOperand = parseFloat(this.display)
+        //  4. this.operator = op
+        //  5. this.waitingForSecond = true
+        // ==========================================
+        setOperator(op) {
+          // ... seu código aqui
+        },
+
+        // ==========================================
+        // TODO 3 — calculate()
+        // Executa a operação pendente.
+        //
+        // Regras:
+        //  1. Se this.operator === null OU this.firstOperand === null:
+        //        return
+        //  2. const a = this.firstOperand
+        //  3. const b = parseFloat(this.display)
+        //  4. Aplique o operador (use if/else ou switch):
+        //        '+' → a + b
+        //        '-' → a - b
+        //        '*' → a * b
+        //        '/' → b === 0 ? 'Erro' : a / b
+        //  5. this.display = String(resultado)
+        //  6. this.firstOperand = null
+        //  7. this.operator = null
+        //  8. this.waitingForSecond = true
+        // ==========================================
+        calculate() {
+          // ... seu código aqui
+        }
+
+      }
+
+    }).mount('#app')
+  </script>
 </body>
-
 </html>
